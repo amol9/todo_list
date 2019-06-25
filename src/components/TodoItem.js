@@ -17,7 +17,7 @@ export class TodoItem extends Component {
     getStyle2 = () => {
         return {
             backgroundColor: '#f4f4f4',
-            padding: '10px',
+            padding: '2px',
             borderBottom: '1px #ccc dotted',
             textDecoration: this.props.todo.completed ? 'line-through' : 'none'
         }
@@ -32,9 +32,12 @@ export class TodoItem extends Component {
         return (
             <div style={this.getStyle2()}>
                 <p>
-                    <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
-                    {' '}
-                    { title }
+                    <span style={spanStyle}>
+                        <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/>
+                        {' '}
+                        { title }
+                    </span>
+                    <button onClick={this.props.delTodo.bind(this, id)} style={btnStyle}>x</button>
                 </p>
             </div>
         )
@@ -43,6 +46,20 @@ export class TodoItem extends Component {
 
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired
+}
+
+const btnStyle = {
+    backgroundColor: '#ff0000',
+    color: '#fff',
+    padding: '5px 9px',
+    borderRadius: '50%',
+    float: 'right',
+    cursor: 'pointer',
+    border: 'none'
+}
+
+const spanStyle = {
+    //float: 'left'
 }
 
 /*const itemStyle = {

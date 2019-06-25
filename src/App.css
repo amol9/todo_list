@@ -1,4 +1,4 @@
-.App {
+.Appx {
   text-align: center;
 }
 
@@ -30,4 +30,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  padding: 1 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
 }
